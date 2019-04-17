@@ -1,2 +1,2 @@
 # IntTestDemo
-An interface test framework demo.
+An interface-test framework demo.
