@@ -7,3 +7,7 @@ class Super_Table(models.Model):
     name = models.CharField(max_length=64)      # 姓名
     tel = models.CharField(max_length=16)       # 联系方式
     address = models.CharField(max_length=200)      # 地址
+
+    # 联合唯一，要求姓名与联系方式的组合必须唯一
+    class Meta:
+        unique_together = ('name', 'tel')
