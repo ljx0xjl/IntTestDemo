@@ -34,7 +34,7 @@ def md5_sign(func):
 
         # 验证客户端MD5签名与服务端MD5签名是否相符
         if server_md5 != client_md5:
-            return JsonResponse({'status': 401, 'message': 'sign check fail'})
+            return JsonResponse({'status': 402, 'message': 'sign check fail'})
         else:
             return func(request, *args, **kwargs)
 
@@ -75,7 +75,7 @@ def add(request):
     # 如果name已经存在于数据表中，返回“10020,名字已经存在”
     result = Super_Table.objects.filter(name=name)
     if result:
-        return JsonResponse({'status': 400, 'message': 'name already exists'})
+        return JsonResponse({'status': 410, 'message': 'name already exists'})
 
     # 添加成功
     Super_Table.objects.create(name=name, tel=int(tel), address=address)
