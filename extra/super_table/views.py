@@ -100,7 +100,7 @@ def search_by_name(request):
         try:
             result = Super_Table.objects.get(name=name)
         except ObjectDoesNotExist:
-            return JsonResponse({'status': 204, 'message': 'result is empty!'})
+            return JsonResponse({'status': 204, 'message': 'result is empty'})
         
         # 查询成功，装载信息到info，返回
         else:
